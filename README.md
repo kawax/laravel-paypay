@@ -1,5 +1,9 @@
 # Laravel PayPay
 
+![tests](https://github.com/kawax/laravel-paypay/workflows/tests/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f44df88528c5eed7315f/maintainability)](https://codeclimate.com/github/kawax/laravel-paypay/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f44df88528c5eed7315f/test_coverage)](https://codeclimate.com/github/kawax/laravel-paypay/test_coverage)
+
 Simple integration Laravel and PayPay API.
 
 https://developer.paypay.ne.jp/
