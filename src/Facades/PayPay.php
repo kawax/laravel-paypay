@@ -12,8 +12,6 @@ use PayPay\OpenPaymentAPI\Controller\Wallet;
 use Revolution\PayPay\Contracts\Factory;
 
 /**
- * Class PayPay
- *
  * @method static Client client()
  * @method static Factory clientUsing($client)
  * @method static Code code()
