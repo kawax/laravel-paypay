@@ -36,7 +36,7 @@ class PayPayTest extends TestCase
         $this->assertInstanceOf(Client::class, $client->client());
     }
 
-    public function testClientUsingCallbale()
+    public function testClientUsingCallable()
     {
         $client = PayPay::clientUsing(function () {
             return m::mock(Client::class);
@@ -65,6 +65,6 @@ class PayPayTest extends TestCase
     {
         $this->expectException(\BadMethodCallException::class);
 
-        $test = PayPay::test();
+        PayPay::test();
     }
 }
