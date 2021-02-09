@@ -2,13 +2,16 @@
 
 namespace Revolution\PayPay;
 
-use BadMethodCallException;
-use Exception;
+use Illuminate\Support\Traits\Macroable;
 use PayPay\OpenPaymentAPI\Client;
 use Revolution\PayPay\Contracts\Factory;
 
 class PayPayClient implements Factory
 {
+    use Macroable {
+        __call as macroCall;
+    }
+
     /**
      * @var Client
      */
@@ -50,12 +53,10 @@ class PayPayClient implements Factory
      */
     public function __call($method, $parameters)
     {
-        try {
+        if (isset($this->client->$method)) {
             return $this->client->$method;
-        } catch (Exception $e) {
-            throw new BadMethodCallException(sprintf(
-                'Method %s::%s does not exist.', static::class, $method
-            ));
         }
+
+        return $this->macroCall($method, $parameters);
     }
 }
