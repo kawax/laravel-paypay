@@ -2,6 +2,7 @@
 
 return [
     // Production mode
+    // false, true, "test", "perfMode"
     'production'  => env('PAYPAY_PRODUCTION', false),
 
     // API KEY

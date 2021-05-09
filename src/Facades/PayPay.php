@@ -4,6 +4,7 @@ namespace Revolution\PayPay\Facades;
 
 use Illuminate\Support\Facades\Facade;
 use PayPay\OpenPaymentAPI\Client;
+use PayPay\OpenPaymentAPI\Controller\CashBack;
 use PayPay\OpenPaymentAPI\Controller\Code;
 use PayPay\OpenPaymentAPI\Controller\Payment;
 use PayPay\OpenPaymentAPI\Controller\Refund;
@@ -19,6 +20,7 @@ use Revolution\PayPay\Contracts\Factory;
  * @method static Refund refund()
  * @method static User user()
  * @method static Wallet wallet()
+ * @method static CashBack cashback()
  */
 class PayPay extends Facade
 {

@@ -9,6 +9,8 @@ Simple integration Laravel and PayPay OpenPayment API.
 
 https://developer.paypay.ne.jp/
 
+https://github.com/paypay/paypayopa-sdk-php
+
 ## Requirements
 - PHP >= 7.3
 - Laravel >= 6.0
