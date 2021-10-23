@@ -8,7 +8,6 @@ interface Factory
 {
     /**
      * @param  callable|Client  $client
-     *
      * @return Factory
      */
     public function clientUsing($client): Factory;
