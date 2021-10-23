@@ -27,7 +27,6 @@ class PayPayClient implements Factory
 
     /**
      * @param  callable|Client  $client
-     *
      * @return Factory
      */
     public function clientUsing($client): Factory
@@ -48,7 +47,6 @@ class PayPayClient implements Factory
     /**
      * @param  string  $method
      * @param  array  $parameters
-     *
      * @return mixed
      */
     public function __call($method, $parameters)
