@@ -13,23 +13,18 @@ class PayPayClient implements Factory
     }
 
     /**
-     * @var Client
-     */
-    protected $client;
-
-    /**
      * @param  Client  $client
      */
-    public function __construct(Client $client)
+    public function __construct(protected Client $client)
     {
-        $this->client = $client;
+        //
     }
 
     /**
      * @param  callable|Client  $client
      * @return Factory
      */
-    public function clientUsing($client): Factory
+    public function clientUsing(callable|Client $client): Factory
     {
         $this->client = is_callable($client) ? call_user_func($client) : $client;
 

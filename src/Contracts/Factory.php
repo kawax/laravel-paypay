@@ -10,7 +10,7 @@ interface Factory
      * @param  callable|Client  $client
      * @return Factory
      */
-    public function clientUsing($client): Factory;
+    public function clientUsing(callable|Client $client): Factory;
 
     /**
      * @return Client
