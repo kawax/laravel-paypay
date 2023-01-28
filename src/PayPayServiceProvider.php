@@ -13,7 +13,7 @@ class PayPayServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton(Factory::class, function () {
             return new PayPayClient(
@@ -35,7 +35,7 @@ class PayPayServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
