@@ -6,14 +6,7 @@ use PayPay\OpenPaymentAPI\Client;
 
 interface Factory
 {
-    /**
-     * @param  callable|Client  $client
-     * @return Factory
-     */
-    public function clientUsing(callable|Client $client): Factory;
+    public function clientUsing(callable|Client $client): static;
 
-    /**
-     * @return Client
-     */
     public function client(): Client;
 }

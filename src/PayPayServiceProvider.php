@@ -10,16 +10,14 @@ class PayPayServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register(): void
     {
         $this->app->singleton(Factory::class, function () {
             return new PayPayClient(
                 new Client([
-                    'API_KEY'     => config('paypay.api_key'),
-                    'API_SECRET'  => config('paypay.api_secret'),
+                    'API_KEY' => config('paypay.api_key'),
+                    'API_SECRET' => config('paypay.api_secret'),
                     'MERCHANT_ID' => config('paypay.merchant_id'),
                 ], config('paypay.production', false))
             );
@@ -32,8 +30,6 @@ class PayPayServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot(): void
     {

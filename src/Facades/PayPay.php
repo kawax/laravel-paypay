@@ -14,7 +14,7 @@ use Revolution\PayPay\Contracts\Factory;
 
 /**
  * @method static Client client()
- * @method static Factory clientUsing($client)
+ * @method static static clientUsing(callable|Client $client)
  * @method static Code code()
  * @method static Payment payment()
  * @method static Refund refund()
@@ -26,10 +26,8 @@ class PayPay extends Facade
 {
     /**
      * Get the registered name of the component.
-     *
-     * @return string
      */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return Factory::class;
     }
