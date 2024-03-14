@@ -29,7 +29,7 @@ class PayPayClient implements Factory
         return $this->client;
     }
 
-    public function __call($method, array $parameters): mixed
+    public function __call($method, $parameters): mixed
     {
         if (isset($this->client->$method)) {
             return $this->client->$method;
