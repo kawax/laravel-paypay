@@ -13,19 +13,17 @@ class PayPayServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(Factory::class, function () {
+        $this->app->scoped(Factory::class, function () {
             return new PayPayClient(
                 new Client([
                     'API_KEY' => config('paypay.api_key'),
                     'API_SECRET' => config('paypay.api_secret'),
                     'MERCHANT_ID' => config('paypay.merchant_id'),
-                ], config('paypay.production', false))
+                ], config('paypay.production', false)),
             );
         });
 
-        if (! $this->app->configurationIsCached()) {
-            $this->mergeConfigFrom(__DIR__.'/../config/paypay.php', 'paypay');
-        }
+        $this->mergeConfigFrom(__DIR__.'/../config/paypay.php', 'paypay');
     }
 
     /**
